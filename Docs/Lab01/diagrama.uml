@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>D:/Faculta/An_3/VVSS/GitHub/src</OriginalElement>
+  <nodes>
+    <node x="1102.0" y="1159.0">inventory.service.InventoryService</node>
+    <node x="512.0" y="1159.0">inventory.repository.InventoryRepository</node>
+    <node x="0.0" y="1159.0">inventory.model.Product</node>
+    <node x="1605.0" y="1159.0">inventory.Main</node>
+    <node x="818.0" y="1159.0">inventory.model.Inventory</node>
+    <node x="156.5" y="0.0">inventory.model.Part</node>
+    <node x="582.0" y="761.0">inventory.controller.AddProductController</node>
+    <node x="318.0" y="414.0">inventory.model.OutsourcedPart</node>
+    <node x="1175.0" y="783.0">inventory.controller.AddPartController</node>
+    <node x="284.0" y="772.0">inventory.controller.ModifyPartController</node>
+    <node x="866.0" y="684.0">inventory.controller.MainScreenController</node>
+    <node x="624.5" y="581.0">inventory.controller.Controller</node>
+    <node x="0.0" y="750.0">inventory.controller.ModifyProductController</node>
+    <node x="0.0" y="414.0">inventory.model.InhousePart</node>
+  </nodes>
+  <notes>
+    <note x="1187.0" y="703.0">
+      <node>inventory.controller.AddPartController</node>
+      <value>displayScene throws IOException\nhandleAddPartCancle throws IOException\nhandleAddPartSave throws IOException</value>
+      <edge>
+        <point x="0.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+      </edge>
+    </note>
+    <note x="589.5" y="681.0">
+      <node>inventory.controller.AddProductController</node>
+      <value>displayScene throws IOException\nhandleCancelProduct throws IOException\nhandleSaveProduct throws IOException</value>
+      <edge>
+        <point x="0.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+      </edge>
+    </note>
+    <note x="293.0" y="692.0">
+      <node>inventory.controller.ModifyPartController</node>
+      <value>displayScene throws IOException\nhandleModifyPartCancelthrows IOException\nhandleModifyPartSave throws IOException</value>
+      <edge>
+        <point x="0.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+      </edge>
+    </note>
+    <note x="888.5" y="572.0">
+      <node>inventory.controller.MainScreenController</node>
+      <value>displayScene throws IOException\nhandleAddPart throws IOException\nhandleAddProduct throws IOException\nhandleModifyPart throws IOException\nhandleModifyProduct throws IOException</value>
+      <edge>
+        <point x="0.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+      </edge>
+    </note>
+    <note x="7.5" y="670.0">
+      <node>inventory.controller.ModifyProductController</node>
+      <value>displayScene throws IOException\nhandleCancelProduct throws IOException\nhandleSaveProduct throws IOException</value>
+      <edge>
+        <point x="0.0" y="0.0" />
+        <point x="0.0" y="0.0" />
+      </edge>
+    </note>
+  </notes>
+  <edges>
+    <edge source="inventory.model.OutsourcedPart" target="inventory.model.Part" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="486.0" y="389.0" />
+      <point x="317.5" y="389.0" />
+      <point x="0.0" y="182.0" />
+    </edge>
+    <edge source="inventory.controller.AddPartController" target="inventory.controller.Controller" relationship="REALIZATION">
+      <point x="0.0" y="-116.0" />
+      <point x="1312.0" y="659.0" />
+      <point x="714.0" y="659.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="inventory.controller.ModifyPartController" target="inventory.controller.Controller" relationship="REALIZATION">
+      <point x="0.0" y="-127.0" />
+      <point x="423.0" y="659.0" />
+      <point x="714.0" y="659.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="inventory.controller.AddProductController" target="inventory.controller.Controller" relationship="REALIZATION">
+      <point x="0.0" y="-138.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="inventory.controller.ModifyProductController" target="inventory.controller.Controller" relationship="REALIZATION">
+      <point x="0.0" y="-149.0" />
+      <point x="132.0" y="659.0" />
+      <point x="714.0" y="659.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="inventory.controller.MainScreenController" target="inventory.controller.Controller" relationship="REALIZATION">
+      <point x="0.0" y="-215.0" />
+      <point x="1010.5" y="659.0" />
+      <point x="714.0" y="659.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="inventory.model.InhousePart" target="inventory.model.Part" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.0" />
+      <point x="149.0" y="389.0" />
+      <point x="317.5" y="389.0" />
+      <point x="0.0" y="182.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.2914398064125832" showDependencies="false" x="388.86918842955856" y="336.5124721864387" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
