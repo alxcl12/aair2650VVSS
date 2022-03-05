@@ -25,7 +25,6 @@ public class AddPartController implements Initializable, Controller {
     private Parent scene;
     private boolean isOutsourced = true;
     private String errorMessage = new String();
-    private int partId;
 
     private InventoryService service;
     
@@ -106,11 +105,13 @@ public class AddPartController implements Initializable, Controller {
         alert.setHeaderText("Confirm Cancelation");
         alert.setContentText("Are you sure you want to cancel adding part?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == ButtonType.OK) {
-            System.out.println("Ok selected. Part addition canceled.");
-            displayScene(event, "/fxml/MainScreen.fxml");
-        } else {
-            System.out.println("Cancel clicked.");
+        if(result.isPresent()) {
+            if (result.get() == ButtonType.OK) {
+                System.out.println("Ok selected. Part addition canceled.");
+                displayScene(event, "/fxml/MainScreen.fxml");
+            } else {
+                System.out.println("Cancel clicked.");
+            }
         }
     }
 

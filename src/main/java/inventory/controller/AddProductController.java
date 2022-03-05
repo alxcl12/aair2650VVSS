@@ -28,7 +28,6 @@ public class AddProductController implements Initializable, Controller {
     private Parent scene;
     private ObservableList<Part> addParts = FXCollections.observableArrayList();
     private String errorMessage = new String();
-    private int productId;
 
     private InventoryService service;
     
@@ -148,11 +147,13 @@ public class AddProductController implements Initializable, Controller {
         alert.setContentText("Are you sure you want to delete part " + part.getName() + " from parts?");
         Optional<ButtonType> result = alert.showAndWait();
 
-        if (result.get() == ButtonType.OK) {
-            System.out.println("Part deleted.");
-            addParts.remove(part);
-        } else {
-            System.out.println("Canceled part deletion.");
+        if(result.isPresent()) {
+            if (result.get() == ButtonType.OK) {
+                System.out.println("Part deleted.");
+                addParts.remove(part);
+            } else {
+                System.out.println("Canceled part deletion.");
+            }
         }
     }
 
@@ -170,11 +171,13 @@ public class AddProductController implements Initializable, Controller {
         alert.setHeaderText("Confirm Cancelation");
         alert.setContentText("Are you sure you want to cancel adding product?");
         Optional<ButtonType> result = alert.showAndWait();
-        if(result.get() == ButtonType.OK) {
-            System.out.println("Ok selected. Product addition canceled.");
-            displayScene(event, "/fxml/MainScreen.fxml");
-        } else {
-            System.out.println("Cancel clicked.");
+        if(result.isPresent()) {
+            if (result.get() == ButtonType.OK) {
+                System.out.println("Ok selected. Product addition canceled.");
+                displayScene(event, "/fxml/MainScreen.fxml");
+            } else {
+                System.out.println("Cancel clicked.");
+            }
         }
     }
     
