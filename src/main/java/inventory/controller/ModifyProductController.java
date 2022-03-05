@@ -258,7 +258,17 @@ public class ModifyProductController implements Initializable, Controller {
     @FXML
     void handleSearchProduct(ActionEvent event) {
         String x = productSearchTxt.getText();
-        addProductTableView.getSelectionModel().select(service.lookupPart(x));
+        if(!service.lookupPart(x).getName().equals(null))
+            addProductTableView.getSelectionModel().select(service.lookupPart(x));
+        else
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Error finding product!");
+            alert.setHeaderText("Error!");
+            alert.setContentText("Product not found");
+            alert.showAndWait();
+        }
+
     }
 
 }

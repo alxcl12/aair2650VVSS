@@ -13,13 +13,13 @@ public abstract class Part {
     private int max;
     
     // Constructor
-    protected Part(int partId, String name, double price, int inStock, int min, int max) {
+    protected Part(int partId, String name, double price, int inStock, int min_pieces, int max_pieces) {
         this.partId = partId;
         this.name = name;
         this.price = price;
         this.inStock = inStock;
-        this.min = min;
-        this.max = max;
+        this.min = min_pieces;
+        this.max = max_pieces;
     }
     
     // Getters

@@ -171,11 +171,11 @@ public class AddPartController implements Initializable, Controller {
             }
             
         } catch (NumberFormatException e) {
-            System.out.println("Form contains blank field.");
+            System.out.println("Invalid numeric value");
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Error Adding Part!");
             alert.setHeaderText("Error!");
-            alert.setContentText("Form contains blank field.");
+            alert.setContentText("Invalid numeric value");
             alert.showAndWait();
         }
     }
