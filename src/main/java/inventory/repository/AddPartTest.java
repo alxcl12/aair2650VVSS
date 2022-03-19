@@ -9,6 +9,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
+import java.text.ParseException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AddPartTest {
@@ -18,6 +20,7 @@ class AddPartTest {
 
     @BeforeEach
     void setUp() {
+        part=null;
         repository= new InventoryRepository();
     }
 
@@ -32,26 +35,46 @@ class AddPartTest {
     @org.junit.jupiter.api.Test
     @Order(1)
     void addPart1() {
-        part=new InhousePart(1,"asd",9.0,2,1,4,1);
-        repository.addPart(part);
+
+        int size= repository.getAllParts().size();
+        part=new InhousePart(1,"asd",-9.0,2,1,4,1);
+        if(Part.isValidPart("asd",-9.0,2,1,4,"")=="")
+            repository.addPart(part);
+
+        assert repository.getAllParts().size() == size+1 ;
+
     }
     @org.junit.jupiter.api.Test
     @Order(2)
     void addPart2() {
-        part=new InhousePart(1,"fis",-10,2,10,4,1);
-        repository.addPart(part);
+        int size= repository.getAllParts().size();
+        part=new InhousePart(1,"asd",9.0,2,10,4,1);
+        if(Part.isValidPart("asd",9.0,2,10,4,"")=="")
+            repository.addPart(part);
+
+        assert repository.getAllParts().size() == size+1 ;
 
     }
     @org.junit.jupiter.api.Test
     @Order(3)
     void addPart3() {
-        part=new InhousePart(1,"crt",11.0,2,10,4,1);
-        repository.addPart(part);
+        int size= repository.getAllParts().size();
+        part=new InhousePart(1,"asd",9.0,2,1,4,1);
+        if(Part.isValidPart("asd",9.0,2,1,4,"")=="")
+            repository.addPart(part);
+
+        assert repository.getAllParts().size() == size+1 ;
+
     }
     @org.junit.jupiter.api.Test
     @Order(4)
     void addPart4() {
-        part=new InhousePart(1,"ndf",11.0,2,1,4,1);
-        repository.addPart(part);
+        int size= repository.getAllParts().size();
+        part=new InhousePart(1,"asd",9.0,20,1,4,1);
+        if(Part.isValidPart("asd",9.0,20,1,4,"")=="")
+            repository.addPart(part);
+
+        assert repository.getAllParts().size() == size+1 ;
+
     }
 }
