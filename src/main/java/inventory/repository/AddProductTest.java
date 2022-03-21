@@ -59,14 +59,14 @@ class AddProductTest {
             product=new Product(7,"somename",0,1,1,4,list);
             repository.addProduct(product);
         }
-        assert (repository.getAllProducts().size() != lista.size());
+        assert (repository.getAllProducts().size() == lista.size());
     }
     @org.junit.jupiter.api.Test
     @Order(4)
     void addProduct4() {
         int size1=repository.getAllProducts().size();
         String error = "";
-        if(Product.isValidProduct("somename",123.0,1,4,1,list,error).length()!=0) {
+        if(Product.isValidProduct("somename",123.0,1,4,1,list,error)==null) {
             product=new Product(8,"somename",123.0,1,4,1,list);
             repository.addProduct(product);
         }
