@@ -41,7 +41,7 @@ class AddPartTest {
         if(Part.isValidPart("asd",-9.0,2,1,4,"")=="")
             repository.addPart(part);
 
-        assert repository.getAllParts().size() == size+1 ;
+        assert repository.getAllParts().size() == size ;
 
     }
     @org.junit.jupiter.api.Test
@@ -52,7 +52,7 @@ class AddPartTest {
         if(Part.isValidPart("asd",9.0,2,10,4,"")=="")
             repository.addPart(part);
 
-        assert repository.getAllParts().size() == size+1 ;
+        assert repository.getAllParts().size() == size ;
 
     }
     @org.junit.jupiter.api.Test
@@ -74,7 +74,7 @@ class AddPartTest {
         if(Part.isValidPart("asd",9.0,20,1,4,"")=="")
             repository.addPart(part);
 
-        assert repository.getAllParts().size() == size+1 ;
+        assert repository.getAllParts().size() == size ;
 
     }
 }
