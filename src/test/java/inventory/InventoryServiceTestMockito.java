@@ -1,8 +1,9 @@
-package inventory.service;
+package inventory;
 
 import inventory.model.InhousePart;
 import inventory.model.Part;
 import inventory.repository.InventoryRepository;
+import inventory.service.InventoryService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.junit.jupiter.api.AfterEach;

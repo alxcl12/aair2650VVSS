@@ -1,13 +1,20 @@
-package inventory.repository;
+package inventory;
 
 import inventory.model.InhousePart;
 import inventory.model.Part;
+import inventory.model.Product;
+import inventory.repository.InventoryRepository;
+import javafx.collections.ObservableList;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-class InventoryRepositoryTest_Junit {
+import java.text.ParseException;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class AddPartTest {
 
     private Part part;
     private InventoryRepository repository;
@@ -22,11 +29,13 @@ class InventoryRepositoryTest_Junit {
     void tearDown() {
     }
 
-
-
     @Test
+    void addPart() {
+    }
+
+    @org.junit.jupiter.api.Test
     @Order(1)
-    void testAddPart() {
+    void addPart1() {
 
         int size= repository.getAllParts().size();
         part=new InhousePart(1,"asd",-9.0,2,1,4,1);
@@ -36,10 +45,20 @@ class InventoryRepositoryTest_Junit {
         assert repository.getAllParts().size() == size ;
 
     }
-
-    @Test
+    @org.junit.jupiter.api.Test
     @Order(2)
-    void testAddPart2() {
+    void addPart2() {
+        int size= repository.getAllParts().size();
+        part=new InhousePart(1,"asd",9.0,2,10,4,1);
+        if(Part.isValidPart("asd",9.0,2,10,4,"")=="")
+            repository.addPart(part);
+
+        assert repository.getAllParts().size() == size ;
+
+    }
+    @org.junit.jupiter.api.Test
+    @Order(3)
+    void addPart3() {
         int size= repository.getAllParts().size();
         part=new InhousePart(1,"asd",9.0,2,1,4,1);
         if(Part.isValidPart("asd",9.0,2,1,4,"")=="")
@@ -48,19 +67,15 @@ class InventoryRepositoryTest_Junit {
         assert repository.getAllParts().size() == size+1 ;
 
     }
-
-    @Test
-    @Order(3)
-    void testDeletePart() {
+    @org.junit.jupiter.api.Test
+    @Order(4)
+    void addPart4() {
         int size= repository.getAllParts().size();
-        part=new InhousePart(1,"asd",9.0,2,1,4,1);
-        if(Part.isValidPart("asd",9.0,2,1,4,"")=="")
+        part=new InhousePart(1,"asd",9.0,20,1,4,1);
+        if(Part.isValidPart("asd",9.0,20,1,4,"")=="")
             repository.addPart(part);
-        assert repository.getAllParts().size() == size+1 ;
 
-        repository.deletePart(part);
-
-        assert repository.getAllParts().size() == size;
+        assert repository.getAllParts().size() == size ;
 
     }
 }
